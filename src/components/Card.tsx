@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import styles from './card.module.css'
+import InteractiveCard from './InteractiveCard'
 
 export default function Card({venueName, imgSrc} : {venueName:string, imgSrc:string}) {
     return (
-        <div className='w-[25%] h-[300px] bg-[#ebeffc] rounded-lg shadow-lg'>
+        <InteractiveCard contentName={venueName}>
             <div className='w-[100%] h-[60%] rounded-t-lg relative overflow-hidden'>
                 <Image
                 src={imgSrc}
@@ -17,6 +18,6 @@ export default function Card({venueName, imgSrc} : {venueName:string, imgSrc:str
                     {venueName}
                 </h2>
             </div>
-        </div>
+        </InteractiveCard>
     )
 }
